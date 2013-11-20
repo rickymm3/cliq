@@ -3,13 +3,13 @@
 class Header_m extends CI_Model
 {
 
-	function __construct()
-		{
-		    parent::__construct();
-		    $this->load->library('tank_auth');
-		    $this->load->helper(array('form', 'url'));
-		    $this->load->library('form_validation');
-		}
+        function __construct()
+        {
+            parent::__construct();
+            $this->load->library('tank_auth');
+            $this->load->helper(array('form', 'url'));
+            $this->load->library('form_validation');
+        }
         
         public function profile()
         {
@@ -65,25 +65,7 @@ class Header_m extends CI_Model
         //end navigation
         
         
-        public function get_history($cliqid)
-        {
-            $parentid = $cliqid;
-            if ($cliqid == false) {
-                return false;
-            } else {
-                $history = array();
-                while (!$parentid == 0)
-                {
-                    $select = "SELECT c.* FROM cliq c";
-                    $where =  " WHERE c.cliqid = '$parentid'";
-                    $query = $this->db->query($select.$where);
-                    $result = $query->row_array();
-                    $parentid = $result['parentid'];
-                    $history[] = $result;
-                }
-                return $history;
-            }
-        }
+  
         
         public function get_cliqinfo($cliqid)
         {

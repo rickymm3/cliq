@@ -7,35 +7,69 @@ class Cliq_info_m extends CI_Model
             parent::__construct();
     }
 	
-	public function default_cliqid()
-	{
-		return 1;
-	}
-	
-	public function what_is_active_cliqid()
-	{
-		/*Different options
-		 * 
-		 * 1. There is no cliq id 
-		 * 		This means the default cliq is active
-		 * 		The cliq id must always be present
-		 * 		
-		 * 
-		*/
-		if ($this->does_cliqid_exist())
-			return $this->default_cliqid();
-		else
-			$active = $this->session->userdata('active');
-			return $active['cliqid'];
-	}
-	
-	public function does_cliqid_exist()
-	{
-		if ($this->session->userdata('active'))
-			return TRUE;
-		else 
-			return FALSE;	
-	}
+    public function default_cliqid()
+    {
+            return 1;
+    }
+
+    public function what_is_active_cliqid()
+    {
+        /*Different options
+         * 
+         * 1. There is no cliq id 
+         *   This means the default cliq is active
+         *   The cliq id must always be present
+        */
+        if ($this->cliqid_exist()) {
+            $active = $this->session->userdata('active');
+            return $active['cliqid'];
+        }else {
+            return $this->default_cliqid();
+        }
+    }
+
+    public function cliqid_exist()
+    {
+        if ($this->session->userdata('active'))
+                return TRUE;
+        else 
+                return FALSE;	
+    }
+    
+    public function get_cliq_info($cliqid)
+    {
+        $data['cliq_history'] = $this->get_history($cliqid);
+        $data['cliq_info']      = $this->get_info($cliqid);
+        #get cliq info (cat included)
+        #get history
+        return $data;
+    }
+    
+    public function get_info($cliqid) {
+        $sql = "SELECT * from cliq where `cliqid` = $cliqid";
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+    
+     public function get_history($cliqid)
+        {
+            $parentid = $cliqid;
+            if ($cliqid == false) {
+                return false;
+            } else {
+                $history = array();
+                while (!$parentid == 0)
+                {
+                    $select = "SELECT c.* FROM cliq c";
+                    $where =  " WHERE c.cliqid = '$parentid'";
+                    $query = $this->db->query($select.$where);
+                    $result = $query->row_array();
+                    $parentid = $result['parentid'];
+                    $history[] = $result;
+                }
+                return $history;
+            }
+        }
     
     public function change_active($cliqid, $cliq=FALSE)
         {

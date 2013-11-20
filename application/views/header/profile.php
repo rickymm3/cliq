@@ -3,5 +3,5 @@
     <div class='profileicon'><i class="icon-comment-alt" style="font-size: 16px"></i></div>
     <div class='profileicon'><i class="icon-tags" style="font-size: 16px"></i></div>
     <div class='profileicon'><i class="icon-cog" style="font-size: 16px"></i></div>
-    <div class='profileicon'><a href='/cliq2/profile/<?=$username?>'><i class="icon-user" style="font-size: 16px"></i></a></div>
+    <div class='profileicon'><a href='/cliqddit/profile/<?=$username?>'><i class="icon-user" style="font-size: 16px"></i></a></div>
 </div>

@@ -6,5 +6,5 @@
     <div class='fbuser'><fb:login-button
     registration-url="<?=$login_url?>" /></div>
     <?php endif; ?>	
-    <a href='/auth/login'><img src='/img/board/cliqicon.png'/></a>
+    <a href='/cliqedit/auth/login'><img src='/cliqedit/img/board/cliqicon.png'/></a>
 </div>
