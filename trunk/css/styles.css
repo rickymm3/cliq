@@ -1,0 +1,24 @@
+/* 
+    Document   : styles
+    Created on : Mar 25, 2013, 3:46:37 PM
+    Author     : Ricky
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.wrapper {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: auto;
+}
+
+.top {
+    position:relative;
+    width: 100%;
+}

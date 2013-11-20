@@ -1,0 +1,148 @@
+.circular {
+	border-radius: 40px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, .8);
+}
+.tl td {
+    height: 50px;
+}
+.tl {
+    border-left:1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+
+.tl-table {
+    background-color: white;
+    border-collapse: collapse;
+    position:relative;
+    width: 100%;
+}
+
+.tl-main {
+    padding-left: 10px;
+    padding-top: 2px;
+    vertical-align: top;
+    width: 50%;
+}
+
+.tl-cliqtd {
+    vertical-align: top;
+    margin-left: 5px;
+    width: 10%;
+}
+
+.tl-awards {
+    vertical-align: top;
+    padding-left: 10px;
+    width: 10%;
+}
+
+.tl-list:hover .tl-body {
+    display: block;
+}
+
+.tl-body {
+    display: none;
+    padding-left: 5px; 
+    margin-top: 6px;
+    font-size: 11px;
+    background-color: #EBF3EC;
+    border: 1px dotted black;
+    margin-bottom: 5px;
+}
+
+.tl-info {
+    vertical-align: top;
+    padding-right: 5px;
+    width: 15%;
+}
+
+.tl-options{
+    
+}
+
+.deleted {
+    border-right: 5px solid red;
+}
+
+.tl-subject{
+    float: left;
+}.tl-subject:hover {
+    color: #143270;
+}
+.hide .tl-subject a {color: gray!important;}
+
+.tl-cliq{
+    float: right;
+}
+
+.tl-lastPoster{
+    float: right;
+}
+.odd {
+    background-color: #F1F2F2;
+}
+.tl-views{
+    float: right;
+}
+
+.tl-header {
+    color: white;
+    border-left:1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    padding: 5px;
+    background-color: #4B8692;
+    border-bottom: 1px solid black;
+}
+
+.tl-sortbar {
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tl tr:last-child {
+
+}
+
+.sort, .profileicon {
+    cursor: pointer;
+    float: left;
+    margin-right: 15px;
+    padding: 3px 10px 0px 10px;
+    height: 25px;
+    margin-top: 3px;
+    border: 1px solid #E8EAEA;
+}
+
+.profileicon {
+    color: #4B8692;
+}
+
+.sort:hover, .profileicon:hover  {
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    border: 1px solid #4B8892;
+    background-color: #88B8C2;
+}
+
+.sort-selected, .profileicon-selected  {
+    background-color: #4B8892;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    color: white;
+}

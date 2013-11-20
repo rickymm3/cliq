@@ -1,0 +1,1 @@
+<li class="ui-state-default visitselect pointer" data-visitid='<?=$listitem['visitid']?>'><span class="left ui-icon ui-icon-arrow-2-n-s"></span><?=$listitem['name']?></li>

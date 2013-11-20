@@ -1,0 +1,154 @@
+/* 
+    Document   : cliqbar
+    Created on : Jun 10, 2013, 2:56:13 PM
+    Author     : RMason
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.margin30 {
+    margin-right: 30px;
+}
+
+.newthread {
+    float: right;
+}
+.filters {
+    float:right;
+    margin-right: 15px;
+}.filterslist {
+    padding-top: 5px;
+    list-style: none;
+}.filterslist li {
+    float: left;
+    padding-right: 25px;
+}
+
+
+.selectable .ui-selecting { background: #FECA40; }
+.selectable .ui-selected { background: #F39814; color: white; }
+.selectable { list-style-type: none; margin: 0; padding: 0; }
+.selectable li { margin: 3px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 12; text-align: center; }
+  
+
+.slideout_icon {
+    margin-left: 10px;
+    margin-right: 5px;
+    background: no-repeat url(//ssl.gstatic.com/s2/oz/images/sprites/ribbon-nav-showroom-1387f3103331bf50aaa13250961a9b2f.png) -42px -21px;
+    height: 18px;
+    width: 20px;
+    float:left;
+}
+
+.cbwrapper {
+    width: 100%;
+    position: relative;
+}.cliqbar {
+    overflow: hidden;
+    width: 100%;
+}.cliqbarinner {
+    overflow: hidden;
+    background-color:  #4B8692;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}.sticky {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+}
+
+.verticalalign2 {
+    padding: 5px
+}
+
+.cliqlabel {
+    height: 42px;
+}
+
+.active {
+    float:left;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.search {
+    padding: 5px;
+    border-radius: 4px;
+    float:left;
+    position: relative;
+    background-color: white;
+    width: 200px;
+}
+
+.search .search_input {
+    float: left;
+    height: 20px;
+    width: 85%;
+    border: 0;
+}
+
+.search .search_submit {
+    cursor: pointer;
+    float: right;
+    border: 0;
+    background-image: url('../img/board/icons/add.jpg');
+    height: 20px;
+    width:20px;
+}
+
+.hovermenu {
+    z-index: 0;
+    height: 42px;
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left:0;
+}
+
+.start {
+    width: 19px;
+    height: 19px;
+    background-image: url('')
+}
+
+
+.nt-choose {
+    z-index: 10000;
+    width: 160px;
+    position: absolute;
+    right: 0;
+    display:none;
+}
+
+.nt-choose ul {
+    padding: 10px;
+    float: right;
+    position: relative;
+    width: 100%;
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nt-choose ul li {
+    float:right;
+    width: 150px;
+    margin-top: 3px;
+    display: block;
+}
+
+.default_button i {
+    float: right;
+}
+
+.default_button span {
+    float: left;
+}
+.show-choose {
+}
+

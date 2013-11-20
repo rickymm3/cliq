@@ -1,0 +1,86 @@
+.op {
+    padding-left: 20px;
+}
+.thread-row {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    padding-bottom: 25px;
+}
+
+.thread-subject {
+    padding-top: 25px;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.carrot {
+    position: absolute;
+    left: -20px;
+}
+
+.thread-profile {
+    text-align: center;
+    float: left;
+    width: 100px;
+}
+
+.thread-content {
+    position: relative;
+    min-height: 100px;
+    float: left;
+    width: 70%;
+    border: 1px solid #999999;
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+}.thread-content-replyTo {
+    position: relative;
+    margin-left: 100px;
+    min-height: 100px;
+    float: left;
+    width: 70%;
+    border: 1px solid #999999;
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+
+.submitbutton{
+    border-radius: 0px 0px 4px 4px;
+    width: 100%; height: 35px;
+  background: #f6f6f6;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  border-left: 1px solid #ddd\9; /* IE 8 and below */
+  border-right: 1px solid #ddd\9; /* IE 8 and below */
+  border-bottom: 1px solid #ddd\9; /* IE 8 and below */
+  background-image: linear-gradient(bottom, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.avatar {
+    width: 50px;
+    height: auto;
+    padding: 10px 5px 5px 5px;
+}
+
+
+.thread-body {
+    padding: 5px;
+}.thread-body ul {
+    padding-left: 35px;
+}.thread-body ol {
+    padding-left: 35px;
+}
+.replyTo {
+    display: none;
+}

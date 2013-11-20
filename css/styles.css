@@ -1,0 +1,63 @@
+/* 
+    Document   : styles
+    Created on : Mar 25, 2013, 3:46:37 PM
+    Author     : Ricky
+    Description:
+        Purpose of the stylesheet follows.
+*/
+* {
+margin: 0;
+padding: 0;
+}
+
+root { 
+    display: block;
+}
+
+html {
+    background-color: #E8EAEA;
+    height: 100%;
+}
+
+body {
+    font-family: 'Didact Gothic', sans-serif;
+    height: 100%;
+}
+
+div {
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+textarea {
+    font-family: 'Didact Gothic', sans-serif;
+    resize: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+    height: 100%;
+} 
+.clear
+{
+clear:both;
+}
+
+.floatleft {
+    float: left;
+}
+
+.choose_cliq{
+    float:left;
+}
+
+.block {
+    display: block;
+}
+
+.login {
+    float: right;
+}

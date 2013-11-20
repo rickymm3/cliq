@@ -1,0 +1,78 @@
+/*
+ Document   : header
+ Created on : Aug 19, 2013, 1:26:58 PM
+ Author     : rmm76331
+ Description:
+ Purpose of the stylesheet follows.
+ */
+
+.navigation {
+	float: left;
+}
+.verticalalign {
+	overflow: hidden;
+	float: left;
+	padding: 5px;
+	width: 190px;
+}
+
+.nav {
+	margin-top : 10px;
+}
+.nav-item {
+	color: white;
+}
+.navul li:first-child {
+
+}
+.navul {
+	background-color: gray;
+	list-style: none;
+}
+.navul li {
+	padding: 0px 8px;
+	float: left;
+}
+.navul li a {
+	display: block;
+	padding: 5px;
+	height: 25px;
+}
+.nav-item:hover {
+	text-shadow: 0px 0px 3 px white !important;
+}
+
+.header {
+	padding-top: 10px;
+	overflow: hidden;
+	position: relative;
+	z-index: 500;
+	background-color: white;
+	border-bottom: 1px solid black;
+}
+
+.logo {
+	float: left;
+	padding-right: 15px;
+	height: 35px;
+	width: auto;
+}
+
+.beta {
+    position:absolute;
+    top:0;
+    left: 0;
+}
+
+.beta img {
+    width: auto;
+    height: 35px;
+}
+
+.hiddenmore {
+	display: none;
+}
+
+.loggedin {
+	float: right;
+}

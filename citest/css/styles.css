@@ -1,0 +1,189 @@
+/* 
+    Document   : styles
+    Created on : May 9, 2013, 11:40:36 AM
+    Author     : RMason
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+.sortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; }
+html>body .sortable li { height: 1.5em; line-height: 1.2em; }
+  .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
+* {
+margin: 0;
+padding: 0;
+}
+
+.ns-resize {
+    cursor: ns-resize;
+}.pointer {
+    cursor: pointer;
+}
+
+.left {
+    float:left!important;
+}
+
+root { 
+    display: block;
+}
+
+body {
+    background-color: grey;
+}
+
+.visit_map {
+    height: 100%;
+    float: left;
+    width: 300px;
+}
+
+h3 {
+    background-color: #ccc;
+}h3:hover {
+    background-color: #666;
+}
+
+ol {
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+}
+
+textarea {
+    height: 20px;
+    resize: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+    width: 40px;
+}
+.final {
+    float: left;
+    height: 300px;
+    min-width: 600px;
+}.tafinal {
+    width: 100%;
+    height: 100%;
+}
+
+#feedback { font-size: 1.4em; }
+.selectable .ui-selecting { background: #FECA40; }
+.selectable .ui-selected { background: #F39814; color: white; }
+.selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+.selectable li { position: relative; width: 600px; margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+.ecfield {
+}.ecdataset {
+}.ecvisit {
+}
+
+.visit_map p {
+    position: relative;
+}
+
+.visp {
+    display: block;
+    width: 100%;
+}.visp:hover {
+    background-color: gray;
+}
+
+.content {
+    float:left;
+}
+
+.contentreplace {
+    float: left;
+}
+
+.select {
+    border-right: 2px dotted black;
+    padding-right: 15px;
+    margin-left: 15px;
+    overflow:hidden;
+    float:left;
+    width: 300px;
+}
+
+.buildoptions {
+    margin-left: 15px;
+    float:left;
+    width: 500px;
+}
+
+.selected {
+    background-color: red !important;
+}
+
+.ul-depend li {
+    background-color: white;
+    border: 1px solid black;
+    margin: 1px;
+}
+
+
+
+/*----*/
+
+#buildyourform {
+}
+
+.builder {
+    background-color: white;
+    border: 1px solid black;
+    width: 300px; 
+    height: 50px; 
+}.builder-header {
+    margin-bottom: 3px;
+    padding: 3px;
+    width: auto;
+    background-color: gray;
+    color: white;
+}.builder-item {
+    cursor: pointer;
+    width:25px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.header-top {
+    padding: 2px;
+    background-color: black;
+    width: 100%;
+    color: white;
+}
+
+.header-nav {
+    background-color: darkblue;
+    width: 100%;
+}
+
+.background {
+    position:relative;
+    float:left;
+    background-color: blue;
+    width: 500px;
+    height: 500px;
+    background-image: url('../img/DM-1.jpg');
+}
+
+.header-nav a {
+    padding-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+.header-nav a:hover {
+    padding-left: 10px;
+    color: #333366;
+    text-decoration: none;
+}
+
+.logo {
+    padding-left: 10px;
+    width: 30px;
+    height: auto;
+}
