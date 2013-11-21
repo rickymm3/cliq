@@ -16,8 +16,7 @@ class Welcome extends CI_Controller
             $this->load->model('user_model');
             $this->load->model('templates/template_m');
             $this->load->model('templates/template_header_m');
-            //used in header
-            $this->load->model('nav_m');
+			$this->load->model('header/nav_m');
             //everymodel below:
             $this->load->model('threadlist_m');
             $this->load->model('components_m');
