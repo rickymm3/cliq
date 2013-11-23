@@ -9,7 +9,6 @@
         <?=$header?>
     </div>
     <div class='content'>
-    	Cliqid = <?= $cliqid ?>
         <?=$content?>
     </div>
 </body>

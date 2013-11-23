@@ -8,51 +8,7 @@ class Logic_m extends CI_Model
 		parent::__construct();
 	}
         
-   	public function change_active($cliqid, $cliq=FALSE)
-    {
-        
-        /* 4 options
-         *  (cliq/5)            => returns cliqid 5
-         *  (cliq/5/sports)     => returns cliqid 5
-         *  (cliq/5/baseball)   => returns cliqid 6
-         *  (cliq/5/new)        => returns cliqid(parentid) = 5 with newcliq in 'active' session
-         */
-         
-         /*
-		  * 1. Check if the second segment is null
-		  * 	a. send cliqid to active cliqid
-		  * 	b. go to 2
-		  * 2. Check if second segment exists in DB
-		  * 	a. if exists - return cliqid
-		  * 	b. if not exists - create temporary
-		  * 3. Create CliqID in Session
-		  * 
-		  * */
-            $data=array();
-            $this->session->unset_userdata('active');
-            $this->session->unset_userdata('history');
-        if ($cliq === FALSE) { 
-            //if url is (cliq/5) with no second parameter
-                $data['active']['newcliq'] = FALSE;
-                $data['active']['cliqid']  = $cliqid;
-                $data['active']['cliq'] = $this->get_cliq($cliqid);
-                $this->session->set_userdata($data);
-        } else {
-            //here if url looks like (cliq/5/::any) <- any exists for sure!
-            $realcliqid = $this->create_m->get_urls_cliqid($cliqid, $cliq);
-            if ($realcliqid === FALSE) {
-                $data['active']['newcliq'] = TRUE;
-                $data['active']['cliqid'] = $cliqid;
-                $data['active']['cliq'] = $cliq;
-            } else {
-                $data['active']['newcliq'] = FALSE;
-                $data['active']['cliqid']  = $realcliqid;
-                $data['active']['cliq'] = $this->get_cliq($realcliqid);
-            }
-            $this->session->set_userdata($data);
-        }
-        $this->change_history();
-    }		
+	
         
         public function isfav($cliqid)
         {

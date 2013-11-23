@@ -27,13 +27,48 @@ class Cliq_info_m extends CI_Model
             return $this->default_cliqid();
         }
     }
+	
+    public function change_active($cliqid, $cliq=FALSE)
+        {
+            
+            /* 4 options
+             *  (cliq/5)            => returns cliqid 5
+             *  (cliq/5/sports)     => returns cliqid 5
+             *  (cliq/5/baseball)   => returns cliqid 6
+             *  (cliq/5/new)        => returns cliqid(parentid) = 5 with newcliq in 'active' session
+             */
+                $data=array();
+                $this->session->unset_userdata('active');
+                $this->session->unset_userdata('history');
+            if ($cliq === FALSE) { 
+                //if url is (cliq/5) with no second parameter
+                    $data['active']['newcliq'] = FALSE;
+                    $data['active']['cliqid']  = $cliqid;
+                    $data['active']['cliq'] = $this->get_cliq($cliqid);
+                    $this->session->set_userdata($data);
+            } else {
+                //here if url looks like (cliq/5/::any) <- any exists for sure!
+                $realcliqid = $this->create_m->get_urls_cliqid($cliqid, $cliq);
+                if ($realcliqid === FALSE) {
+                    $data['active']['newcliq'] = TRUE;
+                    $data['active']['cliqid'] = $cliqid;
+                    $data['active']['cliq'] = $cliq;
+                } else {
+                    $data['active']['newcliq'] = FALSE;
+                    $data['active']['cliqid']  = $realcliqid;
+                    $data['active']['cliq'] = $this->get_cliq($realcliqid);
+                }
+                $this->session->set_userdata($data);
+            }
+            $this->change_history();
+        }
 
     public function cliqid_exist()
     {
         if ($this->session->userdata('active'))
-                return TRUE;
+        	return TRUE;
         else 
-                return FALSE;	
+        	return FALSE;	
     }
     
     public function get_cliq_info($cliqid)
@@ -69,41 +104,6 @@ class Cliq_info_m extends CI_Model
                 }
                 return $history;
             }
-        }
-    
-    public function change_active($cliqid, $cliq=FALSE)
-        {
-            
-            /* 4 options
-             *  (cliq/5)            => returns cliqid 5
-             *  (cliq/5/sports)     => returns cliqid 5
-             *  (cliq/5/baseball)   => returns cliqid 6
-             *  (cliq/5/new)        => returns cliqid(parentid) = 5 with newcliq in 'active' session
-             */
-                $data=array();
-                $this->session->unset_userdata('active');
-                $this->session->unset_userdata('history');
-            if ($cliq === FALSE) { 
-                //if url is (cliq/5) with no second parameter
-                    $data['active']['newcliq'] = FALSE;
-                    $data['active']['cliqid']  = $cliqid;
-                    $data['active']['cliq'] = $this->get_cliq($cliqid);
-                    $this->session->set_userdata($data);
-            } else {
-                //here if url looks like (cliq/5/::any) <- any exists for sure!
-                $realcliqid = $this->create_m->get_urls_cliqid($cliqid, $cliq);
-                if ($realcliqid === FALSE) {
-                    $data['active']['newcliq'] = TRUE;
-                    $data['active']['cliqid'] = $cliqid;
-                    $data['active']['cliq'] = $cliq;
-                } else {
-                    $data['active']['newcliq'] = FALSE;
-                    $data['active']['cliqid']  = $realcliqid;
-                    $data['active']['cliq'] = $this->get_cliq($realcliqid);
-                }
-                $this->session->set_userdata($data);
-            }
-            $this->change_history();
         }
         
         public function get_cliq($cliqid ='')

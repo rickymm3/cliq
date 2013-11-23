@@ -60,4 +60,26 @@ class Welcome extends CI_Controller
             $this->load->view('template/template', $page);
         }
 
+		function cliq($cliqid = false, $cliq = false) {
+				
+			$data['cliqid'] = $this->cliq_info_m->what_is_active_cliqid();
+			
+			if ($cliqid == false) {
+				$cliqid = $this->cliq_info_m->default_cliq();
+			} elseif ($cliqid != $data['cliqid']) {
+				$this->cliq_info_m->change_active($cliqid, $cliq);
+				$data['cliqid'] = $this->cliq_info_m->what_is_active_cliqid();
+			}
+			
+			$data['page']                   = "Welcome to Cliq!";
+            $data['cliqinfo']               = $this->cliq_info_m->get_cliq_info($data['cliqid']);
+			$data['session']				= $this->session->userdata('active');
+            //build components
+            $page['content']              	= $this->load->view('testpage', $data, TRUE);
+            $page['head']                   = $this->load->view('template/components/head', $data, TRUE);
+            $page['header']                	= $this->template_m->header();
+			
+			$this->load->view('template/template', $page);
+		}
+
 }
