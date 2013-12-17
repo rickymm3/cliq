@@ -14,19 +14,33 @@ class Template_m extends CI_Model
         }
         
         public function header() {
-            
-            $page['nav']        = $this->template_header_m->nav();
-            $page['more']      	= $this->template_header_m->more();
-			$page['logo']		= $this->template_header_m->logo();
+            $page['nav']        = $this->header_m->nav();
+			$page['logo']		= $this->header_m->logo();
             
             if (!$this->tank_auth->is_logged_in()) {
-                $page['login']          = $this->template_header_m->loginbutton();
+                $page['login']          = $this->header_m->loginbutton();
             } else {
-                $page['login']      = $this->template_header_m->profile();
+                $page['login']      = $this->header_m->profile();
             }
             return $this->load->view('header', $page, TRUE);   
         }
+		
+		public function infobar() {
+			$page['selectedinfo']	=$this->infobar_m->selectedinfo();
+			return $this->load->view('infobar', $page, TRUE);
+		}
         
+		public function thread_list()
+		{
+			
+		}
+		
+		public function profile_page()
+		{
+			
+		}
+		
+		
         public function facebook($data)
         {
             return $this->load->view('template/facebook', $data, TRUE);

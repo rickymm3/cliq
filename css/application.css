@@ -1,0 +1,86 @@
+.header {
+	position: relative;
+	overflow:hidden;
+	border-bottom: 1px solid black;
+}
+
+.header .banner {
+	float: left;
+}
+
+.header .nav {
+	float: left;
+}
+
+.header .user {
+	float: right;
+}
+
+.header .banner .beta {
+	position: relative;
+}
+
+
+.header .banner .beta img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: auto;
+}
+
+.header .banner .logo a img {
+	padding-left: 20px;
+	width: 80px;
+	height: auto;
+}
+
+.header .user .loginbutton span {
+	float: left;
+}
+.header .user .loginbutton .fbuser{
+	float: left;
+}
+.header .user .loginbutton .cliqlogin {
+	float: left;
+}
+.header .user .loginbutton div {
+	padding-left: 5px;
+}
+
+.content {
+	float: left;
+	width: 80%;	
+}
+
+.infobar {
+	width: 20%;
+	float: right;
+}
+
+
+
+.cliqbutton {
+	padding: 5px;
+	list-style: none;
+	width: auto;
+	height: auto;
+	float: left;
+	text-shadow:1px 1px 0px gray!important;
+}
+
+.cliqbutton a {
+	text-decoration:none;
+	color: white;
+	padding: 5px;
+	font-family: arial;
+}
+
+.sports {	background-color:#389090!important;}
+.cliqcat {	background-color: #F47E7D!important;}
+.news {	background-color: #B5D045!important;}
+.games {	background-color: gray!important; }
+.entertainment {	background-color: #81C0C5!important;}
+.all {	background-color: #E0C7A8!important;}
+.scitech { background-color: #E0C7A8!important;}
+.viral { background-color: #FB8335!important; }

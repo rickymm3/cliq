@@ -12,7 +12,13 @@ class Admin extends CI_Controller
             $this->load->library('tank_auth');
             $this->load->helper('url');
             
-            $this->load->model('template_model');
+            $this->load->model('page_m');
+            $this->load->model('user_model');
+            $this->load->model('templates/template_m');
+            $this->load->model('templates/template_header_m');
+			$this->load->model('header/nav_m');
+			$this->load->model('cliq_info_m');
+			
             $this->load->model('threadlist_m');
             $this->load->model('components_m');
             $this->load->model('header_m');

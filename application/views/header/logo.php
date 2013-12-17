@@ -1,6 +1,6 @@
 <div class='beta'>	
-	<img src="/cliqedit/img/beta.png"/>
+	<img src="/cliq/img/beta.png"/>
 </div>
 <div class='logo'>
-	<a href="/cliqedit/"><img class="logo" src="/cliqedit/img/cliq_logo_large.png" /></a>
+	<a href="/cliq/"><img src="/cliq/img/cliq_logo_large.png" /></a>
 </div>

@@ -1,0 +1,56 @@
+/* 
+    Document   : template
+    Created on : Jun 10, 2013, 10:47:47 AM
+    Author     : RMason
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.paddingleft {
+    padding-left: 10px;
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+    max-width: 100%;
+    min-width: 810px;
+    height: auto;
+}
+
+.content {
+    height: 100%;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.waypoint {
+    position: relative;
+}
+
+.divider {
+    position: relative;
+    height: 100%;
+}
+.authloginmodal {
+    display: none;
+}
+.loginbutton {
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
+.favorites {
+    float:left;
+}
+
+.user {
+    float: right;
+}
+}

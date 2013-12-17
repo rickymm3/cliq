@@ -13,14 +13,14 @@ $(document).ready(function() {
         var cliqid = $(this).data("cliqid");
         var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/ajax/ajax_change_cliq",
+            url: "ajax/ajax_change_cliq",
             dataType: 'json',
             data: {cliqid: cliqid, cliq:cliq}
         });
         request.done(function (response){
             var cliq = response['cliq'];
             var cliqid = response['cliqid'];
-            var href = '/cliqedit/cliq/'+cliqid+'/'+cliq;
+            var href = 'cliq/'+cliqid+'/'+cliq;
             History.pushState('', 'New URL: '+href, href);
             $('.active').html(response['active']);
             $('.content').html(response['threadlist']);
@@ -77,7 +77,7 @@ $("html").click(function(){
         $('.content').html('Loading');
         var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/ajax/ajax_newthread/",
+            url: "ajax/ajax_newthread/",
             dataType: 'json',
             data: {}
         });
@@ -93,7 +93,7 @@ $("html").click(function(){
                        }
                     var cliqid = response['cliqid'];
                     var cliq = response['cliq'];
-                    var href = '/cliqedit/create/'+cliqid+'/'+cliq;
+                    var href = 'create/'+cliqid+'/'+cliq;
                     History.pushState('', 'New URL: '+href, href);
                     $('.content').html(response['newthread']);
                 }
@@ -112,12 +112,12 @@ $("html").click(function(){
         var slug = $(this).data('slug');
         var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/ajax/ajax_thread/",
+            url: "ajax/ajax_thread/",
             dataType: 'json',
             data: {threadid:threadid}
         });
         request.done(function (response){
-            var href = '/cliqedit/thread/'+threadid+'/'+slug;
+            var href = 'thread/'+threadid+'/'+slug;
             History.pushState('', 'New URL: '+href, href);
             $('.active').html(response['active']);
             $('.content').html(response['content']);
@@ -133,7 +133,7 @@ $("html").click(function(){
         var search = $('.search_input').val();
         var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/ajax/ajax_find/",
+            url: "ajax/ajax_find/",
             dataType: 'json',
             data: {search:search}
         });
@@ -141,7 +141,7 @@ $("html").click(function(){
             var cliqidstring = '';
             var cliqid = response['cliqid'];
             if (cliqid === '') { cliqidstring = ""; } else { cliqidstring = cliqid + "/"; }
-            var href = '/cliqedit/find/'+cliqidstring+'?q='+response['search'];
+            var href = 'find/'+cliqidstring+'?q='+response['search'];
             History.pushState('', 'New URL: '+href, href);
             $('.content').html(response['search_results']);
         }); 
@@ -155,7 +155,7 @@ $("html").click(function(){
 
          var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/ajax/ajax_createthread/",
+            url: "ajax/ajax_createthread/",
             dataType: 'json',
             data: {body:body, subject:subject}
         });
@@ -177,7 +177,7 @@ $("html").click(function(){
          e.preventDefault();
          var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/ajax/authloginmodal/",
+            url: "ajax/authloginmodal/",
             dataType: 'json',
             data: {}
         });
@@ -201,7 +201,7 @@ $("html").click(function(){
         e.preventDefault();
          var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/index.php/auth/login/",
+            url: "index.php/auth/login/",
             dataType: 'json',
             data: {}
         });
@@ -278,7 +278,7 @@ $("html").click(function(){
                 } else {
                     var request = $.ajax({
                     type: "POST",
-                    url: "/cliqedit/ajax/ajax_gethistory/",
+                    url: "ajax/ajax_gethistory/",
                     dataType: 'json',
                     data: {hovcliqid:hovcliqid}
                 });
@@ -315,7 +315,7 @@ $("html").click(function(){
         var body = editor.getValue();
         var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/index.php/ajax/replyTo",
+            url: "index.php/ajax/replyTo",
             dataType: 'json',
             data: {threadid:threadid, postnum:postnum, body:body}
         });
@@ -337,7 +337,7 @@ $("html").click(function(){
         var cliqid = $(this).data('cliqid');
          var request = $.ajax({
             type: "POST",
-            url: "/cliqedit/index.php/ajax/ajax_changefav",
+            url: "index.php/ajax/ajax_changefav",
             dataType: 'json',
             data: {cliqid:cliqid, isfaved:isfaved}
         });

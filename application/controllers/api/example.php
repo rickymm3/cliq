@@ -28,7 +28,7 @@ class Example extends REST_Controller
             $this->load->library('tank_auth');
             $this->load->helper('url');
             
-            $this->load->model('template_model');
+            $this->load->model('template_m');
             $this->load->model('threads_model');
 	}
         

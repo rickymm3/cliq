@@ -1,0 +1,161 @@
+.sports {
+    	background-color:#389090!important;
+        text-shadow:1px 1px 0px gray!important;
+}.cliqcat {
+    	background-color: #F47E7D!important;
+        text-shadow:1px 1px 0px gray!important;
+
+}.news {
+    	background-color: #B5D045!important;
+        text-shadow:1px 1px 0px gray!important;
+}.games {
+    	background-color: gray!important;
+        text-shadow:1px 1px 0px gray!important;
+}.entertainment {
+    	background-color: #81C0C5!important;
+        text-shadow:1px 1px 0px gray!important;
+}.all {
+    	background-color: #E0C7A8!important;
+        text-shadow:1px 1px 0px gray!important;
+}.scitech { 
+        background-color: #E0C7A8!important;
+        text-shadow:1px 1px 0px gray!important;
+}.viral {
+        background-color: #FB8335!important;
+        text-shadow:1px 1px 0px gray!important;
+}
+.default_button {
+        width: 120px;
+        cursor: pointer;
+    	background-color:#FB8335;
+	-moz-border-radius:1px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 9px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px gray;
+}.create_cliq {
+        background-color:#FB8335;
+	-moz-border-radius:1px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 9px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px gray;
+}.reply {
+    cursor: pointer;
+    	background-color:#FB8335;
+	-moz-border-radius:1px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 9px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px gray;
+}
+
+.cliq {
+	background-color:#FB8335;
+	-moz-border-radius:1px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 9px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px gray;
+}.cliq:active {
+	position:relative;
+	top:1px;
+}.cliq:hover {
+    cursor: pointer;
+}.cliq a {
+        display: block;
+}
+
+.cliqinfo {
+    -webkit-box-shadow: 1px 0px 23px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    1px 0px 23px rgba(50, 50, 50, 0.5);
+    box-shadow:         1px 0px 23px rgba(50, 50, 50, 0.5);
+    z-index: 200;
+    display: none;
+    position: absolute;
+    background-color: #4B8692;
+    border-radius: 0px 1px 1px 1px;
+    border: 1px solid #dcdcdc;
+    color: black;
+}
+
+.fs15 {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.tl .cliq {
+	background-color:#FB8335;
+	-moz-border-radius:1px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:11px!important;
+	font-weight:bold;
+	padding:2px 4px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px gray;
+}
+
+.history {
+    padding: 10px;
+}
+
+.addfavorite {
+    padding: 5px;
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+
+.star {
+    cursor: pointer;
+    font-size: 20px;
+    font-family: FontAwesome;
+    padding-right: 5px;
+    border-bottom-width: 0px!important;
+}
+
+.addfavorite span.star:before {
+    content: "\f006";
+    color: #999999;
+}
+.addfavorite span.favstar:before {
+    content: "\f005"!important;
+    color: #e3cf7a!important;
+}
+
+.addfavorite span.star:hover:before, .addfavorite span.star:hover~span.star:before {
+    content: "\f005";
+    color: #ccc;
+}

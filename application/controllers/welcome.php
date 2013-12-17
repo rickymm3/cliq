@@ -12,26 +12,19 @@ class Welcome extends CI_Controller
             $this->load->library('form_validation');
             $this->load->library('session');
              //necessary models
-            $this->load->model('page_m');
             $this->load->model('user_model');
-            $this->load->model('templates/template_m');
-            $this->load->model('templates/template_header_m');
+            $this->load->model('template_m');
+            $this->load->model('templates/header_m');
+			$this->load->model('templates/infobar_m');
 			$this->load->model('header/nav_m');
+			$this->load->model('cliq_info_m');
+			$this->load->model('application_m');
+			
             //everymodel below:
-            $this->load->model('threadlist_m');
-            $this->load->model('components_m');
-            $this->load->model('header_m');
+   
             $this->load->model('facebook_m');
-            $this->load->model('slideout_m');
-            $this->load->model('cliqbar_m');
-            $this->load->model('newthread_m');
-            $this->load->model('search_m');
-            $this->load->model('create_m');
-            $this->load->model('threads_m');
-            $this->load->model('profile_m');
+ 
             /*loaded in other models*/
-            $this->load->model('cliq_info_m');
-            $this->load->model('angular_m');
         }
 	
         function index() {
@@ -49,35 +42,36 @@ class Welcome extends CI_Controller
              * 
              */
             //populate page data
-            $data['page']                   = "Welcome to Cliq!";
-            $data['cliqid']                   = $this->cliq_info_m->what_is_active_cliqid();
-            $data['cliqinfo']                = $this->cliq_info_m->get_cliq_info($data['cliqid']);
+            $data['page']               = "Welcome to Cliq!";
+            $data['cliqid']             = $this->cliq_info_m->get_active_cliqid();
+            $data['cliq_info']          = $this->cliq_info_m->get_cliq_info($data['cliqid']);
+			//set session data
+			$this->application_m->assign_cliq_info_to_session($data);
+			
+			$data['session']			= $this->session->all_userdata();
             //build components
-            $page['content']               = $this->load->view('testpage', $data, TRUE);
-            $page['head']                   = $this->load->view('template/components/head', $data, TRUE);
-            $page['header']                = $this->template_m->header();
+            $page['content']            = $this->load->view('testpage', $data, TRUE);
+            $page['head']               = $this->load->view('template/components/head', $data, TRUE);
+            $page['header']             = $this->template_m->header();
+			$page['infobar']			= $this->template_m->infobar();
 			
             $this->load->view('template/template', $page);
         }
 
 		function cliq($cliqid = false, $cliq = false) {
-				
-			$data['cliqid'] = $this->cliq_info_m->what_is_active_cliqid();
 			
-			if ($cliqid == false) {
-				$cliqid = $this->cliq_info_m->default_cliq();
-			} elseif ($cliqid != $data['cliqid']) {
-				$this->cliq_info_m->change_active($cliqid, $cliq);
-				$data['cliqid'] = $this->cliq_info_m->what_is_active_cliqid();
-			}
 			
-			$data['page']                   = "Welcome to Cliq!";
-            $data['cliqinfo']               = $this->cliq_info_m->get_cliq_info($data['cliqid']);
-			$data['session']				= $this->session->userdata('active');
+			$data['cliqid'] = 				$this->application_m->change_active($cliqid, $cliq);
+            $data['page']                   = "Welcome to Cliq!";
+            $data['cliq_info']              = $this->cliq_info_m->get_cliq_info($data['cliqid']);
+						//set session data
+			
+			$data['session']				= $this->session->all_userdata();
             //build components
             $page['content']              	= $this->load->view('testpage', $data, TRUE);
             $page['head']                   = $this->load->view('template/components/head', $data, TRUE);
             $page['header']                	= $this->template_m->header();
+			$page['infobar']				= $this->template_m->infobar();
 			
 			$this->load->view('template/template', $page);
 		}

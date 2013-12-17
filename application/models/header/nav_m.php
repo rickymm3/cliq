@@ -3,20 +3,12 @@
 class Nav_m extends CI_Model
 {
 
-	function __construct()
-	{
-		parent::__construct();
-	}
-	
-	public function get_categories()
-    {
-        $sql = "SELECT * FROM cat";
-        $query = $this->db->query($sql);
-        return $query->result_array();
-    }
-                
+        function __construct()
+        {
+                parent::__construct();
+        }
         
-//------currently not used
+        
         public function isfav($cliqid)
         {
             $userid = $this->tank_auth->get_user_id();
@@ -101,7 +93,13 @@ class Nav_m extends CI_Model
             return $result;
         }
         
-
+        public function get_categories()
+        {
+            $sql = "SELECT * FROM cat";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
+                
         public function get_catabbr($cliqid = '')
         {
             if ($cliqid == '') { $cliqid = '%'; }

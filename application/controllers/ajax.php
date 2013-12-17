@@ -11,11 +11,16 @@ class Ajax extends CI_Controller
             $this->load->library('session');
             $this->load->library('tank_auth');
             $this->load->helper('url');
-            
-            $this->load->model('template_model');
+			
+            $this->load->model('page_m');
+            $this->load->model('user_model');
+            $this->load->model('templates/template_m');
+            $this->load->model('templates/template_header_m');
+			$this->load->model('header/nav_m');
+			$this->load->model('cliq_info_m');
+			
             $this->load->model('threadlist_m');
             $this->load->model('components_m');
-            $this->load->model('header_m');
             $this->load->model('facebook_m');
             $this->load->model('logic_m');
             $this->load->model('slideout_m');
@@ -36,7 +41,7 @@ class Ajax extends CI_Controller
             if ($this->input->post('cliq')) {
                 $cliq = $this->db->escape_str($this->input->post('cliq'));
             }
-            $this->logic_m->change_active($cliqid, $cliq);
+            $this->cliq_info_m->change_active($cliqid, $cliq);
             $active = $this->session->userdata('active');
             $response['cliq'] = url_title($active['cliq']);
             $response['cliqid'] = $active['cliqid'];
