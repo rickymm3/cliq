@@ -19,7 +19,7 @@ class Welcome extends CI_Controller
 			$this->load->model('header/nav_m');
 			$this->load->model('cliq_info_m');
 			$this->load->model('application_m');
-			
+			$this->load->model('post_m');
             //everymodel below:
    
             $this->load->model('facebook_m');
@@ -27,7 +27,7 @@ class Welcome extends CI_Controller
             /*loaded in other models*/
         }
 	
-        function index() {
+        function index($cliqid = false, $cliq = false) {
             //$this->session->sess_destroy();
             /*setup page
              * set users default cliq 
@@ -42,20 +42,20 @@ class Welcome extends CI_Controller
              * 
              */
             //populate page data
-            $data['page']               = "Welcome to Cliq!";
-            $data['cliqid']             = $this->cliq_info_m->get_active_cliqid();
-            $data['cliq_info']          = $this->cliq_info_m->get_cliq_info($data['cliqid']);
-			//set session data
-			$this->application_m->assign_cliq_info_to_session($data);
+			$data['cliqid'] = 				$this->application_m->change_active($cliqid, $cliq);
+            $data['page']                   = "Welcome to Cliq!";
+						//set session data
 			
-			$data['session']			= $this->session->all_userdata();
+			$data['session']				= $this->session->all_userdata();
             //build components
-            $page['content']            = $this->load->view('testpage', $data, TRUE);
-            $page['head']               = $this->load->view('template/components/head', $data, TRUE);
-            $page['header']             = $this->template_m->header();
-			$page['infobar']			= $this->template_m->infobar();
+            $data['posts'] 					= $this->post_m->get_posts();
 			
-            $this->load->view('template/template', $page);
+            $page['content']              	= $this->load->view('testpage', $data, TRUE);
+            $page['head']                   = $this->load->view('template/components/head', $data, TRUE);
+            $page['header']                	= $this->template_m->header();
+			$page['infobar']				= $this->template_m->infobar();
+			
+			$this->load->view('template/template', $page);
         }
 
 		function cliq($cliqid = false, $cliq = false) {
@@ -63,10 +63,11 @@ class Welcome extends CI_Controller
 			
 			$data['cliqid'] = 				$this->application_m->change_active($cliqid, $cliq);
             $data['page']                   = "Welcome to Cliq!";
-            $data['cliq_info']              = $this->cliq_info_m->get_cliq_info($data['cliqid']);
+            $data['cliq_info']              = $this->cliq_info_m->get_cliq_info();
 						//set session data
 			
 			$data['session']				= $this->session->all_userdata();
+			$data['posts'] 					= $this->post_m->get_posts();
             //build components
             $page['content']              	= $this->load->view('testpage', $data, TRUE);
             $page['head']                   = $this->load->view('template/components/head', $data, TRUE);

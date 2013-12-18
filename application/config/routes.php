@@ -39,6 +39,7 @@
 */
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
+$route['(:any)'] = "welcome/$1";
 $route['cliq/(:any)'] = "welcome/cliq/$1";
 $route['thread/(:any)'] = "welcome/thread/$1";
 $route['find/(:any)'] = "welcome/find/$1";

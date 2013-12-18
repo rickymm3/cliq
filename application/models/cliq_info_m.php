@@ -4,7 +4,7 @@ class Cliq_info_m extends CI_Model
 {
     function __construct()
     {
-            parent::__construct();
+    	parent::__construct();
     }
 	
     public function default_cliqid()
@@ -21,8 +21,8 @@ class Cliq_info_m extends CI_Model
          *   The cliq id must always be present
         */
         if ($this->cliqid_exist()) {
-            $active = $this->session->userdata('active');
-            return $active['cliqid'];
+            $cliq_info = $this->session->userdata('cliq_info');
+            return $cliq_info['cliqid'];
         }else {
             return $this->default_cliqid();
         }
@@ -101,16 +101,29 @@ class Cliq_info_m extends CI_Model
 
     public function cliqid_exist()
     {
-        if ($this->session->userdata('active'))
-        	return TRUE;
-        else 
-        	return FALSE;	
+    	$cliq_info = $this->session->userdata('cliq_info');
+		$cliqid = $cliq_info['cliqid'];
+		if ($cliqid) 
+		{
+			$sql = "SELECT * from cliq where cliqid = $cliqid";
+			$query = $this->db->query($sql);
+		    if ($query->row_array())
+		    	return TRUE;
+		    else 
+		    	return FALSE;
+        }	
     }
     
-    public function get_cliq_info($cliqid)
+    public function get_cliq_info()
     {
-        $data['cliq_history'] = $this->get_history($cliqid);
-        $data['cliq_info']      = $this->get_info($cliqid);
+    	$cliqid = $this->get_active_cliqid();
+		if ($this->cliqid_exist($cliqid))
+		{		
+        	$data['cliq_history'] = $this->get_history($cliqid);
+        	$data['cliq_info']      = $this->get_info($cliqid);
+		} else {
+			$data['cliq_info'] = false;
+		}
         #get cliq info (cat included)
         #get history
         return $data;
